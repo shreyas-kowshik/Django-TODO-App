@@ -1,0 +1,12 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2><a href="{% url 'todolist' %}">View TODOs</a></h2>
+        <h2><a href="{% url 'todocreate' %}">Create New TODO</a></h2>
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+    {% else %}
+        <h2><a href="{% url 'login' %}">Login</a></h2>
+    {% endif %}
+{% endblock %}

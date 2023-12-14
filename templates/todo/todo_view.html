@@ -1,0 +1,12 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <article>
+            <time>
+                {{ post.last_modified_date }}
+            </time>
+            <h2><a href="">{{ post.title }}</a></h2>
+        </article>
+    {% endfor %}
+{% endblock %}
